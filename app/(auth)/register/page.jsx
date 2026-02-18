@@ -795,46 +795,13 @@
 //   );
 // }
 
-import { OnboardingFlow } from "@/components/onboarding/OnboardingFlow";
+import { Suspense } from "react";
+import RegisterClient from "./register-client";
 
-const ALLOWED_SCREENS = new Set([
-  "onboarding",
-  "signup",
-  "login",
-  "otp",
-  "forgot-password",
-  "new-password",
-  "password-success",
-]);
-
-const sanitizeScreen = (screen) => {
-  if (typeof screen !== "string") {
-    return undefined;
-  }
-
-  return ALLOWED_SCREENS.has(screen) ? screen : undefined;
-};
-
-const sanitizeUserType = (type) => {
-  if (type === "hirer" || type === "talent") {
-    return type;
-  }
-
-  return undefined;
-};
-
-export default function RegisterPage({ searchParams }) {
-  const requestedScreen = sanitizeScreen(searchParams?.screen);
-  const requestedType = sanitizeUserType(searchParams?.type);
-
-  const initialUserType = requestedType ?? "talent";
-  const initialScreen = requestedScreen ?? (requestedType ? "signup" : "onboarding");
-
+export default function RegisterPage() {
   return (
-    <OnboardingFlow
-      key={`${initialScreen}-${initialUserType}`}
-      initialScreen={initialScreen}
-      initialUserType={initialUserType}
-    />
+    <Suspense fallback={null}>
+      <RegisterClient />
+    </Suspense>
   );
 }
