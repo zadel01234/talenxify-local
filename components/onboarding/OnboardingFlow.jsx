@@ -1,10 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { MainLayout } from "../../Onboarding-UI/src/components/MainLayout";
-import { OnboardingContent, CustomizeContent, SuccessContent } from "../../Onboarding-UI/src/components/ScreenContents";
-import { CustomizeOrganization } from "../../Onboarding-UI/src/screens/CustomizeOrganization";
-import { UploadPhoto } from "../../Onboarding-UI/src/screens/UploadPhoto";
 import { SignUpScreen } from "./screens/SignUpScreen";
 import { LoginScreen } from "./screens/LoginScreen";
 import { ForgotPasswordScreen } from "./screens/ForgotPasswordScreen";
@@ -12,6 +8,11 @@ import { OtpVerificationScreen } from "./screens/OtpVerificationScreen";
 import { NewPasswordScreen } from "./screens/NewPasswordScreen";
 import { authApi } from "@/lib/api/auth";
 import { tokenStorage } from "@/lib/api/token-storage";
+
+import { MainLayout } from "./ui/MainLayout";
+import { OnboardingContent, CustomizeContent, SuccessContent } from "./ui/ScreenContents";
+import { CustomizeOrganization } from "./screens/CustomizeOrganization";
+import { UploadPhoto } from "./screens/UploadPhoto";
 
 const POST_LOGIN_REDIRECT = process.env.NEXT_PUBLIC_POST_LOGIN_REDIRECT || "/dashboard";
 
