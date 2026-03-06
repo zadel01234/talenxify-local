@@ -18,7 +18,7 @@ export function useGigs() {
     return useQuery({
         queryKey: gigKeys.lists(),
         queryFn: () => gigsService.getGigs(),
-        staleTime: 1 * 60 * 1000, // Consider data fresh for 5 minutes
+        staleTime: 5 * 60 * 1000, // Consider data fresh for 5 minutes
     });
 }
 
