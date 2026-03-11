@@ -9,7 +9,7 @@ export const OnboardingContent = ({ onNavigate }: { onNavigate: (type: string) =
             <span className="italic-blue">Talenxify?</span>
           </h2>
           <p className="action-subtitle">
-            We'd like to personalize your experience so you find what you're looking for!
+            We&apos;d like to personalize your experience so you find what you&apos;re looking for!
           </p>
         </div>
         <div className="action-buttons">
@@ -160,7 +160,7 @@ export const OTPContent = ({ onNavigate }: { onNavigate: () => void }): JSX.Elem
       </div>
       <button className="verify-btn" onClick={onNavigate}>Verify</button>
       <p className="resend-text">
-        Didn't receive a code? <a href="#" className="resend-link">Resend</a>
+        Didn&apos;t receive a code? <a href="#" className="resend-link">Resend</a>
       </p>
     </div>
   </main>
